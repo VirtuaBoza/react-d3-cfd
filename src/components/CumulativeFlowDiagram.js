@@ -20,12 +20,12 @@ function CumulativeFlowDiagram({
   const timeScale = scaleTime()
     .domain([startDate, endDate])
     .range([margin.left, width - margin.right]);
-  const xAxis = axisBottom().scale(timeScale);
+  const xAxis = axisBottom(timeScale);
 
   const scopeScale = scaleLinear()
     .domain([0, total])
     .range([height - margin.bottom, margin.top]);
-  const yAxis = axisLeft().scale(scopeScale);
+  const yAxis = axisLeft(scopeScale);
 
   const xAxisRef = useRef();
   const yAxisRef = useRef();
